@@ -8,7 +8,9 @@ app.use(bodyParser.json())
 
 app.get('/api/coins', controller.getCoins)
 app.get('/api/globalData', controller.getGlobalData)
+app.post('/api/coinFavorites', controller.addCoinFavorites)
 app.post('/api/coins', controller.addCoins)
+
 app.delete('/api/coins/:id', controller.deleteCoin)
 
 const port = 7070

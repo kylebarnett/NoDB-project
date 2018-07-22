@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import DeleteButton from './DeleteButton'
 
 class AddCoin extends Component {
   constructor(){
@@ -14,24 +13,24 @@ class AddCoin extends Component {
     }
   }
 
-  handleNameChange = (value) => {
+  handleNameChange = (event) => {
     this.setState({
-      name: value
+      name: event.target.value
     })
   }
-  handleRankChange = (value) => {
+  handleRankChange = (event) => {
     this.setState({
-      rank: value
+      rank: event.target.value
     })
   }
-  handlePriceChange = (value) => {
+  handlePriceChange = (event) => {
     this.setState({
-      price: value
+      price: event.target.value
     })
   }
-  handleSymbolChange = (value) => {
+  handleSymbolChange = (event) => {
     this.setState({
-      symbol: value
+      symbol: event.target.value
     })
   }
 
@@ -39,18 +38,18 @@ class AddCoin extends Component {
     const { name, rank, price, symbol } = this.state
     const newCoin = { name, rank, price, symbol }
     axios.post('/api/coins', newCoin).then( results => {
-      this.props.addCoin(results.data)
+      this.props.updateCoin(results.data)
     })
   }
 
   render(){
     return(
       <div>
-        <input type="text" placeholder="Coin Name" value={this.state.name} onChange={ (e) => this.handleNameChange(e.target.value)}></input>
-        <input type="text" placeholder="Rank" value={this.state.rank} onChange={ (e) => this.handleRankChange(e.target.value)}></input>
-        <input type="text" placeholder="Price" value={this.state.price} onChange={ (e) => this.handlePriceChange(e.target.value)}></input>
-        <input type="text" placeholder="Symbol" value={this.state.symbol} onChange={ (e) => this.handleSymbolChange(e.target.value)}></input>
-        <button> Add Coin! </button>
+        <input type="text" placeholder="Coin Name" value={this.state.name} onChange={this.handleNameChange}></input>
+        <input type="text" placeholder="Rank" value={this.state.rank} onChange={this.handleRankChange}></input>
+        <input type="text" placeholder="Price" value={this.state.price} onChange={this.handlePriceChange}></input>
+        <input type="text" placeholder="Symbol" value={this.state.symbol} onChange={this.handleSymbolChange}></input>
+        <button onClick={this.addCoin}> Add Coin! </button>
         </div>
     )
   }

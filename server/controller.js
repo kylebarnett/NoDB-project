@@ -37,7 +37,7 @@ let coins = [
     symbol: "EOS"
   },
 ]
-
+let coinFavorites = []
 let globalData = []
 
 let id = 6
@@ -68,7 +68,22 @@ module.exports = {
     res.status(200).send(coins)
   },
 
+  addCoinFavorites: (req, res) => {
+    const {favorite} = req.body
+    const newFavorite = {
+      favorite
+    }
+    coinFavorites.push(newFavorite)
+    res.status(200).send(coinFavorites)
+  },
+
   deleteCoin: (req, res) => {
     const {id} = req.params
-  }
+    let index = coins.findIndex( c => c.id === Number(id))
+
+    if (index !== -1){
+      coins.splice(index, 1)
+    }
+    res.status(200).send(coins)
+  } 
 }

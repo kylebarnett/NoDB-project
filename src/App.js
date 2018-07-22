@@ -3,13 +3,16 @@ import './App.css';
 import axios from 'axios'
 import AddCoin from './components/AddCoin'
 import GlobalData from './components/GlobalData'
+import CoinList from './components/CoinList'
+import Favorites from './components/Favorites'
 
 class App extends Component {
   constructor(){
     super()
 
     this.state = {
-      coins: []
+      coins: [],
+      favorites: []
     }
   }
 
@@ -19,6 +22,11 @@ class App extends Component {
         coins: results.data
       })
     })
+    // axios.get('api/coinFavorites').then(results => {
+    //   this.setState({
+    //     favorites: results.data
+    //   })
+    // })
   }
 
   updateCoin = (coin) => {
@@ -27,12 +35,24 @@ class App extends Component {
     })
   }
 
+  updateFavorites = (favorite) => {
+    this.setState({
+      favorites: favorite
+    })
+  }
+
   render() {
-    //map function here to map over the list of coins
+    let coinMap = this.state.coins.map( c => {
+      return (
+        <CoinList updateCoin={this.updateCoin} c = {c}/>
+      )
+    }) 
     return (
       <div className="App">
           <GlobalData />
-          <AddCoin />
+          <AddCoin updateCoin={this.updateCoin}/>
+          <Favorites updateFavorites={this.updateFavorites} favorites={this.state.favorites} />
+          {coinMap}
       </div>
     );
   }
