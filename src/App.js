@@ -17,16 +17,16 @@ class App extends Component {
   }
 
   componentDidMount(){
-    axios.get('api/coins').then(results => {
+    axios.get('/api/coins').then(results => {
       this.setState({
         coins: results.data
       })
     })
-    // axios.get('api/coinFavorites').then(results => {
-    //   this.setState({
-    //     favorites: results.data
-    //   })
-    // })
+    axios.get('/api/coinFavorites').then(results => {
+      this.setState({
+        favorites: results.data
+      })
+    })
   }
 
   updateCoin = (coin) => {
@@ -44,15 +44,15 @@ class App extends Component {
   render() {
     let coinMap = this.state.coins.map( c => {
       return (
-        <CoinList updateCoin={this.updateCoin} c = {c}/>
+        <CoinList updateCoin={this.updateCoin} updateFavorites = {this.updateFavorites} c = {c}/>
       )
     }) 
     return (
       <div className="App">
           <GlobalData />
-          <AddCoin updateCoin={this.updateCoin}/>
-          <Favorites updateFavorites={this.updateFavorites} favorites={this.state.favorites} />
+          <AddCoin updateCoin={this.updateCoin} />
           {coinMap}
+          <Favorites updateFavorites={this.updateFavorites} favorites={this.state.favorites} />
       </div>
     );
   }

@@ -5,11 +5,12 @@ class Favorites extends Component {
   render(){
     let favoriteMap = this.props.favorites.map( f => {
       return (
-        <Favorites2 updateFavorites={this.updateFavorites} f = {f} />
+        <Favorites2 updateFavorites={this.props.updateFavorites} f = {f} />
       )
     })
     return(
-      <div>
+      <div className = "favorites-content-right">
+      Favorites: 
       {favoriteMap}
       </div>
     )

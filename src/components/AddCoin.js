@@ -44,12 +44,12 @@ class AddCoin extends Component {
 
   render(){
     return(
-      <div>
-        <input type="text" placeholder="Coin Name" value={this.state.name} onChange={this.handleNameChange}></input>
-        <input type="text" placeholder="Rank" value={this.state.rank} onChange={this.handleRankChange}></input>
-        <input type="text" placeholder="Price" value={this.state.price} onChange={this.handlePriceChange}></input>
-        <input type="text" placeholder="Symbol" value={this.state.symbol} onChange={this.handleSymbolChange}></input>
-        <button onClick={this.addCoin}> Add Coin! </button>
+      <div className = "add-coin">
+        <input className = "coin-name-input" type="text" placeholder="Coin Name" value={this.state.name} onChange={this.handleNameChange}></input>
+        <input className = "rank-input" type="text" placeholder="Rank" value={this.state.rank} onChange={this.handleRankChange}></input>
+        <input className = "price-input" type="text" placeholder="Price" value={this.state.price} onChange={this.handlePriceChange}></input>
+        <input className = "symbol-input" type="text" placeholder="Symbol" value={this.state.symbol} onChange={this.handleSymbolChange}></input>
+        <button className ="add-coin-button" onClick={this.addCoin}> Add Coin! </button>
         </div>
     )
   }

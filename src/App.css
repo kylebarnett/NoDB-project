@@ -1,29 +1,182 @@
 .App {
   text-align: center;
+  background-color: bisque;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+/* .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
-}
+} */
 
-.App-title {
+/* .App-title {
   font-size: 1.5em;
-}
+} */
 
-.App-intro {
+/* .App-intro {
   font-size: large;
+} */ 
+
+/* .globaldata {
+  background-color: aqua;
+  display: flex;
+  align-content: space-between;
+} */
+.coins {
+  height: 100%;
+  width: 100%;
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-image: url('')
+  /* margin-top: 5px; */
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.big-header {
+  height: 10vh;
+  top: 0;
+  width: auto;
+  background-image: url("https://cdn.cnn.com/cnnnext/dam/assets/170407220916-04-iconic-mountains-matterhorn-restricted.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  position: sticky;
+  display: flex;
+}
+
+.global-data {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.crypto-data {
+  height: 50vh;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.market-data {
+  height: 50vh;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.market-cap-data {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.volume-data{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btc-dominance-data {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.add-coin-button {
+  width: 12%;
+  height: 35px;
+  color: white;
+  background-color: rgb(79, 79, 211);
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 8px;
+  align-content: center;
+  cursor: pointer;
+}
+
+.add-to-favorites-button{
+  height: 35px;
+  width: 12%;
+  background-color: #001f3f;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 8px;
+  display: flex;
+  margin-left: 565px;
+  align-content: center;
+  cursor: pointer;
+}
+
+.going-to-0-button {
+  width: 12%;
+  height: 35px;
+  background-color: salmon;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: 565px;
+  border-radius: 8px;
+  display: flex;
+  align-content: center;
+  cursor: pointer;
+}
+
+.add-coin {
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.coin-name-input{
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 5px;
+  border: 1px solid rgb(79, 79, 211);
+}
+
+.rank-input{
+  border-radius: 8px;
+  margin-top: 5px;
+  border: 1px solid rgb(79, 79, 211);
+}
+
+.price-input{
+  border-radius: 8px;
+  margin-top: 5px;
+  border: 1px solid rgb(79, 79, 211);
+}
+
+.symbol-input{
+  border-radius: 8px;
+  margin-top: 5px;
+  border: 1px solid rgb(79, 79, 211);
+}
+
+.favorites-content-right{
+  height: 90%;
+  width: 20%;
+  color: white;
+  background-color: #001f3f;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  overflow: auto;
+}
+
+.delete-favorites-button{
+  width: 50%;
+  height: 35px;
+  background-color: salmon;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 

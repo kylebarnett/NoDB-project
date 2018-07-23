@@ -54,6 +54,10 @@ module.exports = {
     })
   },
 
+    getCoinFavorites: (req, res) => {
+      res.status(200).send(coinFavorites)
+    },
+
   addCoins: (req, res) => {
     const {name, rank, price, symbol} = req.body
     const coin = {
@@ -69,9 +73,13 @@ module.exports = {
   },
 
   addCoinFavorites: (req, res) => {
-    const {favorite} = req.body
+    const { id ,name, rank, price, symbol } = req.body
     const newFavorite = {
-      favorite
+      id,
+      name,
+      rank,
+      price,
+      symbol
     }
     coinFavorites.push(newFavorite)
     res.status(200).send(coinFavorites)
@@ -85,5 +93,15 @@ module.exports = {
       coins.splice(index, 1)
     }
     res.status(200).send(coins)
-  } 
+  },
+
+  deleteCoinFavorites: (req, res) => {
+    const {id} = req.params
+    let index = coinFavorites.findIndex( c => c.id === Number(id))
+
+    if (index !== -1){
+      coinFavorites.splice(index, 1)
+    }
+    res.status(200).send(coinFavorites)
+  }
 }

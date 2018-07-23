@@ -7,8 +7,8 @@ const NumberFormat = require('react-number-format')
 class CoinList extends Component {
 
   addToFavorites = () => {
-    axios.post('/api/coinFavorites').then( results => {
-      this.props.updateFavorites
+    axios.post('/api/coinFavorites', this.props.c).then( results => {
+      return this.props.updateFavorites(results.data)
     })
   }
 
@@ -20,12 +20,12 @@ class CoinList extends Component {
   render(){
     const {c} = this.props
     return (
-      <div>
+      <div className = "coins">
         <h3>Name: {c.name}</h3>
         <p> Rank: {c.rank}</p>
         <p> Price: <NumberFormat value = {c.price} displayType = {'text'} thousandSeparator = {true} prefix = {'$'}/></p>
         <p> Symbol: {c.symbol}</p>
-        <button onClick={this.addToFavorites}> Add To Favorites! </button>
+        <button className = "add-to-favorites-button" onClick={this.addToFavorites}> Add To Favorites! </button>
         <DeleteButton id={c.id} deleteCoin={this.deleteCoin} />
       </div>
     )
