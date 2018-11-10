@@ -24,6 +24,7 @@ class GlobalData extends Component {
   }
   componentDidMount(){
     axios.get('/api/globalData').then( results => {
+      console.log(111111, results)
       this.setState({
         global: results.data
       })
@@ -31,7 +32,7 @@ class GlobalData extends Component {
   }
 
   render(){
-    console.log(this.state.global.data)
+    console.log(111111, this.state.global.data)
     return(
       <div className = "big-header">
         <h4 className = "global-data"> Global Data </h4>
