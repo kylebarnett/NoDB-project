@@ -21,6 +21,7 @@ class CoinList extends Component {
     const {c} = this.props
     return (
       <div className = "coins">
+        <h1>New Project</h1>
         <h3>Name: {c.name}</h3>
         <p> Rank: {c.rank}</p>
         <p> Price: <NumberFormat value = {c.price} displayType = {'text'} thousandSeparator = {true} prefix = {'$'}/></p>

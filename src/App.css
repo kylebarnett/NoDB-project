@@ -4,26 +4,6 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-} */
-
-/* .App-title {
-  font-size: 1.5em;
-} */
-
-/* .App-intro {
-  font-size: large;
-} */ 
-
-/* .globaldata {
-  background-color: aqua;
-  display: flex;
-  align-content: space-between;
-} */
 .coins {
   height: 100%;
   width: 100%;
@@ -39,7 +19,7 @@
   height: 10vh;
   top: 0;
   width: auto;
-  background-image: url("https://cdn.cnn.com/cnnnext/dam/assets/170407220916-04-iconic-mountains-matterhorn-restricted.jpg");
+  background-color: grey;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
